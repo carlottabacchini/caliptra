@@ -1,0 +1,59 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+    "type": "Feature",
+    "properties": {
+      "title": "cavalcavia"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.186886226833593, 45.485564634207634]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "artigiani"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.190575800175168, 45.486047407453185]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "striscia"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.187523888888888, 45.4857767]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "deposito"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.187523888888888, 45.4858883]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "ecobox"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.187621111111111, 45.4859544]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "gatti"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.187825, 45.48595144]
+    }
+  }
+]
+}
