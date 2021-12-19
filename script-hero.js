@@ -20,7 +20,10 @@ function verifyMouseEvent(e, elem) {
 
 var lImg, ee;
 
-var ratio = 2.333562113932739
+var larghezzaIMG = 3400;
+var altezzaIMG = 1457;
+
+var ratio = larghezzaIMG / altezzaIMG;
 
 lImg = window.innerHeight * ratio
 ee = lImg - window.innerWidth ;
