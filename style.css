@@ -18,6 +18,11 @@
   src: url("Aeonik-Bold.ttf");
 }
 
+@font-face {
+  font-family: "inconsolata";
+  src: url("Inconsolata-Light.ttf");
+}
+
 .mapboxgl-ctrl-bottom-left {
     display: none !important;
 }
@@ -160,7 +165,7 @@ html, body {
 } */
 
 #details:after {
-  content: url('../arrow_small.png');
+  content: url('arrow_small.png');
   float: right;
 }
 
@@ -190,6 +195,15 @@ html, body {
   margin-top: 0;
   max-width: 70%;
 }
+
+#sidebar h2 {
+  display: none;
+  position: fixed;
+  font-family: inconsolata;
+  font-size: 32px;
+  top: 5.3vh;
+  right: 2vw;
+  color: #efd9d9;}
 
 #sidebar p {
   font-family: regular;
@@ -264,6 +278,16 @@ html, body {
     opacity: 1;
     z-index: 1;
     transform: scale(1);
+}
+
+#loader {
+  background: #e7c6c6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  width: 100vw;
+  height: 100vh;
 }
 
 @keyframes closeIn {
