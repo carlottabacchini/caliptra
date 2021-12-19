@@ -1,7 +1,7 @@
 var p = document.getElementById('spotlight')
 var spotlightDiameter = 100;
 var lastX, lastY, cursorX, cursorY;
-var patterns = new Array("radici.png");
+var patterns = new Array("radici.jpg");
 var randomNum = Math.floor(Math.random() * patterns.length);
 p.style.width = spotlightDiameter + 'px';
 p.style.height = spotlightDiameter + 'px';
@@ -25,9 +25,8 @@ ee = lImg - window.innerWidth ;
 
 window.addEventListener("resize", function(event) {
   lImg = window.innerHeight * 16 / 9
-  ee = lImg - window.innerWidth ;
+  ee = lImg - window.innerWidth;
 });
-
 
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -38,9 +37,8 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 
 
 else {
-
-
   window.addEventListener('mousemove', function(e) {
+    p.style.display = "block"
     cursorX = e.pageX - spotlightDiameter / 2;
     cursorY = e.pageY - spotlightDiameter / 2;
   })
@@ -51,7 +49,8 @@ else {
     p.style.left = newX + 'px';
     p.style.top = newY + 'px';
 
-    p.style.backgroundPositionX = -newX - 4 - ee/2 + "px";
+
+    p.style.backgroundPositionX = -newX - 4 - ee/2 - 273 + "px";
     p.style.backgroundPositionY = -newY - 4 + "px";
     p.style.backgroundImage = 'url(' + patterns[randomNum] + ')';
     lastX = p.offsetLeft
