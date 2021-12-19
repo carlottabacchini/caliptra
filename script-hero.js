@@ -20,14 +20,15 @@ function verifyMouseEvent(e, elem) {
 
 var lImg, ee;
 
-lImg = window.innerHeight * 16 / 9
+var ratio = 2.333562113932739
+
+lImg = window.innerHeight * ratio
 ee = lImg - window.innerWidth ;
 
 window.addEventListener("resize", function(event) {
-  lImg = window.innerHeight * 16 / 9
+  lImg = window.innerHeight * ratio
   ee = lImg - window.innerWidth;
 });
-
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
   p.style.left = 'calc(100% - ' + randomNum / 2 * 100 + 'px)';
@@ -50,7 +51,7 @@ else {
     p.style.top = newY + 'px';
 
 
-    p.style.backgroundPositionX = -newX - 4 - ee/2 - 273 + "px";
+    p.style.backgroundPositionX = -newX - 4 - ee/2 + "px";
     p.style.backgroundPositionY = -newY - 4 + "px";
     p.style.backgroundImage = 'url(' + patterns[randomNum] + ')';
     lastX = p.offsetLeft
