@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+    "type": "Feature",
+    "properties": {
+      "title": "sassi"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.230985, 45.493237]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "lampione"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.230749, 45.493086]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "atm"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.230403, 45.494491]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "cassoni"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.231195, 45.493403]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "piante"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.231659, 45.493507]
+    }
+  }
+]
+}

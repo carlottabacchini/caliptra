@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+    "type": "Feature",
+    "properties": {
+      "title": "edifici"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.161536, 45.521274]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "mura"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.164725, 45.521235]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "mandala"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.161944, 45.519179]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "vento"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.163634, 45.521427]
+    }
+  }
+]
+}

@@ -193,7 +193,6 @@ map.once('idle', function() {
         }
       });
 
-
       $.getJSON(orto + '.geojson', function(geojson) {
         var bbox = turf.extent(geojson);
         map.fitBounds(bbox, {
@@ -204,7 +203,6 @@ map.once('idle', function() {
           easing: (t) => t,
           essential: true
         });
-
       })
 
       $("#sidebar").css("width", "calc(50% + 85px)");
@@ -227,8 +225,8 @@ map.once('idle', function() {
       });
 
       $("#sidebar h1").html("Isola Pepe Verde");
-      $("#sidebar h3").html("RISCATTO VERDE");
-      $("#sidebar p").html("Isola Pepe Verde non è una realtà in cui le aiuole sono curate da uno sponsor o dal Comune, i prati tagliati dai giardinieri e le fontane ed i viali disegnati dagli architetti. Infatti, nasce durante la lunga fase dei cantieri di Porta Nuova, dall’esigenza di restituire al quartiere un’area verde e dalla volontà di sperimentare nuove modalità di partecipazione e condivisione dei residenti.  <br><br>È proprio per questi motivi che la volontà di riunirsi per trovare un luogo in cui ricreare uno spazio verde e comunitario – simbolo di riscatto in opposizione alle colate di cemento – ha portato alla luce Isola Pepe Verde: una piccola oasi verde, composta da alberi, ortaggi, piante aromatiche di vario genere, che emerge tra i grattacieli della metropoli.");
+      $("#sidebar h3").html("7 MAGGIO - 26 GIUGNO");
+      $("#sidebar p").html("RISCATTO VERDE <br><br>Isola Pepe Verde non è una realtà in cui le aiuole sono curate da uno sponsor o dal Comune, i prati tagliati dai giardinieri e le fontane ed i viali disegnati dagli architetti. Infatti, nasce durante la lunga fase dei cantieri di Porta Nuova, dall’esigenza di restituire al quartiere un’area verde e dalla volontà di sperimentare nuove modalità di partecipazione e condivisione dei residenti.  <br><br>È proprio per questi motivi che la volontà di riunirsi per trovare un luogo in cui ricreare uno spazio verde e comunitario – simbolo di riscatto in opposizione alle colate di cemento – ha portato alla luce Isola Pepe Verde: una piccola oasi verde, composta da alberi, ortaggi, piante aromatiche di vario genere, che emerge tra i grattacieli della metropoli.");
 
       $("#sidebar #s1").attr("src", orto + "/1.png")
       $("#sidebar #s2").attr("src", orto + "/2.png")
@@ -236,6 +234,12 @@ map.once('idle', function() {
       $("#sidebar #s4").attr("src", orto + "/4.png")
       $("#sidebar #s5").attr("src", orto + "/5.png")
     }
+
+
+
+
+
+
 
 
     document.getElementById('OVP').onclick = function() {
@@ -271,7 +275,6 @@ map.once('idle', function() {
           easing: (t) => t,
           essential: true
         });
-
       })
 
       $("#sidebar").css("width", "calc(50% + 85px)");
@@ -294,14 +297,223 @@ map.once('idle', function() {
       });
 
       $("#sidebar h1").html("Orti di Via Padova");
-      $("#sidebar p").html("In questa zona si accostano, così, mondi e storie diverse, immagini e prospettive di nuove forme urbane mescolate a un passato più o meno recente. A Isola ci sono, velate dalla polvere di nuovi e vecchi cantieri, sovrapposizioni di ricordi che, per chi si affaccia per la prima volta alle geometrie del quartiere, possono risultare caotiche e disordinate. In realtà, per comprendere i vari strati, è solo richiesta una maggiore lentezza, un diverso sguardo, una calma non consona a Milano, città del rigore e degli spostamenti rapidi. ");
+      $("#sidebar h3").html("21 MAGGIO - 10 LUGLIO ");
+      $("#sidebar p").html("COESIONE SOCIALE<br><br>Gli Orti di via Padova sorgono in una zona che, da una parte, è stata oscurata per molto tempo dalla fama turbolenta di via Padova, dall’altra, dal costante traffico di via Palmanova che taglia a metà il quartiere segnando un netto confine. Nel 2014 nasce l’orto con l’intento di ricucire le ferite del quartiere e dei rapporti tra i suoi cittadini, diventando un luogo di incontro e simbolo di coesione sociale.");
 
       $("#sidebar #s1").attr("src", orto + "/1.png")
-      $("#sidebar #s2").attr("src", orto + "/2.png")
-      $("#sidebar #s3").attr("src", orto + "/3.png")
-      $("#sidebar #s4").attr("src", orto + "/4.png")
-      $("#sidebar #s5").attr("src", orto + "/5.png")
+      $("#sidebar #s2").attr("src", orto + "/1.png")
+      $("#sidebar #s3").attr("src", orto + "/1.png")
+      $("#sidebar #s4").attr("src", orto + "/1.png")
+      $("#sidebar #s5").attr("src", orto + "/1.png")
 
+    }
+
+
+
+
+
+
+
+    document.getElementById('GDS').onclick = function() {
+
+      window.scrollTo(0, 0);
+      $(".marker").fadeOut()
+      $('#indicazioni').css("display", "block");
+
+      document.getElementById('indicazioni').onclick = function() {
+        window.open('https://www.google.com/maps/search/?api=1&query=parco+trotter', '_blank');
+      }
+
+      orto = "GDS"
+
+      map.addLayer({
+        'id': orto + 'outline',
+        'type': 'line',
+        'source': orto,
+        'layout': {},
+        'paint': {
+          'line-color': '#172424',
+          'line-width': 3
+        }
+      });
+
+      $.getJSON(orto + '.geojson', function(geojson) {
+        var bbox = turf.extent(geojson);
+        map.fitBounds(bbox, {
+          padding: 400,
+          bearing: 0,
+          speed: 1,
+          curve: 2,
+          easing: (t) => t,
+          essential: true
+        });
+      })
+
+      $("#sidebar").css("width", "calc(50% + 85px)");
+
+      $("#sidebar #render").css("display", "block")
+      $("#sidebar #render").css("background-image", "url(" + orto + ".png)")
+
+      $('#sidebar').css({
+        "animation": "slideIn 1s normal forwards ease-in-out"
+      });
+      $('#close').css({
+        "animation": "closeIn 1.25s normal forwards ease-in-out"
+      });
+      $('#indicazioni').css({
+        "animation": "closeIn 1.25s normal forwards ease-in-out"
+      });
+      $('#indicazioni img').css("filter", "none");
+      $('#map').css({
+        "animation": "mapOut 2s normal forwards ease-in-out"
+      });
+
+      $("#sidebar h1").html("Giardini del Sole");
+      $("#sidebar h3").html("4 GIUGNO - 24 LUGLIO");
+      $("#sidebar p").html("EDUCAZIONE ATTIVA<br><br>I Giardini del Sole sono collocati all’interno del parco Trotter, area vasta e salubre nata all’inizio del ‘900 dove i bambini di salute gracile potevano godere dei benefici del contatto diretto con l’ambiente naturale, oltre ad apprendere le nozioni botaniche. Questi orti si trovano in prossimità di istituzioni scolastiche, il che rende la loro forma di resilienza dell’educazione attiva ancora più forte dal momento che si è perpetuata fino ai giorni nostri.");
+
+      $("#sidebar #s1").attr("src", orto + "/1.png")
+      $("#sidebar #s2").attr("src", orto + "/1.png")
+      $("#sidebar #s3").attr("src", orto + "/1.png")
+      $("#sidebar #s4").attr("src", orto + "/1.png")
+      $("#sidebar #s5").attr("src", orto + "/1.png")
+
+    }
+
+
+
+    document.getElementById('CGN').onclick = function() {
+
+      window.scrollTo(0, 0);
+      $(".marker").fadeOut()
+      $('#indicazioni').css("display", "block");
+
+      document.getElementById('indicazioni').onclick = function() {
+        window.open('https://www.google.com/maps/search/?api=1&query=cascina+cuccagna', '_blank');
+      }
+
+      orto = "CGN"
+
+      map.addLayer({
+        'id': orto + 'outline',
+        'type': 'line',
+        'source': orto,
+        'layout': {},
+        'paint': {
+          'line-color': '#172424',
+          'line-width': 3
+        }
+      });
+
+      $.getJSON(orto + '.geojson', function(geojson) {
+        var bbox = turf.extent(geojson);
+        map.fitBounds(bbox, {
+          padding: 400,
+          bearing: 0,
+          speed: 1,
+          curve: 2,
+          easing: (t) => t,
+          essential: true
+        });
+      })
+
+      $("#sidebar").css("width", "calc(50% + 85px)");
+
+      $("#sidebar #render").css("display", "block")
+      $("#sidebar #render").css("background-image", "url(" + orto + ".png)")
+
+      $('#sidebar').css({
+        "animation": "slideIn 1s normal forwards ease-in-out"
+      });
+      $('#close').css({
+        "animation": "closeIn 1.25s normal forwards ease-in-out"
+      });
+      $('#indicazioni').css({
+        "animation": "closeIn 1.25s normal forwards ease-in-out"
+      });
+      $('#indicazioni img').css("filter", "none");
+      $('#map').css({
+        "animation": "mapOut 2s normal forwards ease-in-out"
+      });
+
+      $("#sidebar h1").html("Cascina Cuccagna");
+      $("#sidebar h3").html("28 MAGGIO - 17 LUGLIO");
+      $("#sidebar p").html("LEGAME STORICO<br><br>Gli orti della Cascina Cuccagna sorgono una decina di anni fa in un’area iscritta al catasto fin dal 1690. Si tratta di un vero proprio movimento proveniente dal basso: per tornare alle origini rurali, i cittadini si mobilitano per realizzare un piccolo spazio verde coltivato in cui il legame storico con il quartiere continua ad essere vivo.");
+
+      $("#sidebar #s1").attr("src", orto + "/1.png")
+      $("#sidebar #s2").attr("src", orto + "/1.png")
+      $("#sidebar #s3").attr("src", orto + "/1.png")
+      $("#sidebar #s4").attr("src", orto + "/1.png")
+      $("#sidebar #s5").attr("src", orto + "/1.png")
+
+    }
+
+
+
+
+    document.getElementById('GDA').onclick = function() {
+
+      window.scrollTo(0, 0);
+      $(".marker").fadeOut()
+      $('#indicazioni').css("display", "block");
+
+      document.getElementById('indicazioni').onclick = function() {
+        window.open('https://www.google.com/maps/search/?api=1&query=il+giardino+degli+aromi', '_blank');
+      }
+
+      orto = "GDA"
+
+      map.addLayer({
+        'id': orto + 'outline',
+        'type': 'line',
+        'source': orto,
+        'layout': {},
+        'paint': {
+          'line-color': '#172424',
+          'line-width': 3
+        }
+      });
+
+      $.getJSON(orto + '.geojson', function(geojson) {
+        var bbox = turf.extent(geojson);
+        map.fitBounds(bbox, {
+          padding: 400,
+          bearing: 0,
+          speed: 1,
+          curve: 2,
+          easing: (t) => t,
+          essential: true
+        });
+      })
+
+      $("#sidebar").css("width", "calc(50% + 85px)");
+
+      $("#sidebar #render").css("display", "block")
+      $("#sidebar #render").css("background-image", "url(" + orto + ".png)")
+
+      $('#sidebar').css({
+        "animation": "slideIn 1s normal forwards ease-in-out"
+      });
+      $('#close').css({
+        "animation": "closeIn 1.25s normal forwards ease-in-out"
+      });
+      $('#indicazioni').css({
+        "animation": "closeIn 1.25s normal forwards ease-in-out"
+      });
+      $('#indicazioni img').css("filter", "none");
+      $('#map').css({
+        "animation": "mapOut 2s normal forwards ease-in-out"
+      });
+
+      $("#sidebar h1").html("Giardino degli Aromi");
+      $("#sidebar h3").html("14 GIUGNO - 3 LUGLIO");
+      $("#sidebar p").html("TRASFORMAZIONE CURATIVA<br><br>Il Giardino degli Aromi è portavoce e testimonianza della riconversione di uno spazio. Quando esisteva ancora l’ospedale psichiatrico Paolo Pini, le aree verdi venivano utilizzate per dare conforto e terapia agli internati e costituivano uno spazio totalmente chiuso rispetto al quartiere; ad oggi i giardini e la loro trasformazione curativa hanno ancora un significativo legame con ambienti sanitari, ma, privati dello stigma della malattia godono di un’apertura anche verso gli ambienti cittadini.");
+
+      $("#sidebar #s1").attr("src", orto + "/1.png")
+      $("#sidebar #s2").attr("src", orto + "/1.png")
+      $("#sidebar #s3").attr("src", orto + "/1.png")
+      $("#sidebar #s4").attr("src", orto + "/1.png")
+      $("#sidebar #s5").attr("src", orto + "/1.png")
 
     }
 
@@ -311,8 +523,12 @@ map.once('idle', function() {
 
 
 
-$("#close").on("click", function() {
 
+
+
+
+
+$("#close").on("click", function() {
 
   $('#sidebar').css({
     "animation": "slideOut 2s normal forwards ease-in-out"
@@ -323,13 +539,12 @@ $("#close").on("click", function() {
 
   $("#sidebar .swiper-container").css("display", "block")
 
-
-
-
   if (tracce) {
     $('#close').css({
       "animation": "closeS-Out 1.25s normal forwards ease-in-out"
     });
+
+    $(".tracce").remove()
 
   } else {
     $('#close').css({
@@ -354,9 +569,9 @@ $("#close").on("click", function() {
   });
 
   if (tracce) {
-    map.removeLayer("areaIsola")
-    map.removeLayer("lineaIsola")
-    map.removeSource("isola")
+    map.removeLayer("area")
+    map.removeLayer("linea")
+    map.removeSource("quartiere")
 
     $(".tracce").fadeOut()
 
@@ -388,6 +603,12 @@ $("#close").on("click", function() {
 
 });
 
+
+
+
+
+
+
 function checkTracce() {
 
   if (!tracce) {
@@ -396,6 +617,14 @@ function checkTracce() {
     removeInfo()
   }
 }
+
+
+
+
+
+
+
+
 
 function removeInfo() {
 
@@ -421,20 +650,22 @@ function removeInfo() {
 
   $("#sidebar img").css("display", "block")
 
+  $(".tracce").remove()
+
 
   if (orto == "IPV") {
     $("#sidebar h1").html("Isola Pepe Verde");
-    $("#sidebar p").html("In questa zona si accostano, così, mondi e storie diverse, immagini e prospettive di nuove forme urbane mescolate a un passato più o meno recente. A Isola ci sono, velate dalla polvere di nuovi e vecchi cantieri, sovrapposizioni di ricordi che, per chi si affaccia per la prima volta alle geometrie del quartiere, possono risultare caotiche e disordinate. In realtà, per comprendere i vari strati, è solo richiesta una maggiore lentezza, un diverso sguardo, una calma non consona a Milano, città del rigore e degli spostamenti rapidi. ");
-    $("#sidebar h3").html("RISCATTO VERDE");
+    $("#sidebar p").html("RISCATTO VERDE<br><br>In questa zona si accostano, così, mondi e storie diverse, immagini e prospettive di nuove forme urbane mescolate a un passato più o meno recente. A Isola ci sono, velate dalla polvere di nuovi e vecchi cantieri, sovrapposizioni di ricordi che, per chi si affaccia per la prima volta alle geometrie del quartiere, possono risultare caotiche e disordinate. In realtà, per comprendere i vari strati, è solo richiesta una maggiore lentezza, un diverso sguardo, una calma non consona a Milano, città del rigore e degli spostamenti rapidi. ");
+    $("#sidebar h3").html("7 MAGGIO - 26 GIUGNO");
 
-    map.removeLayer("areaIsola")
-    map.removeLayer("lineaIsola")
-    map.removeSource("isola")
+    map.removeLayer("area")
+    map.removeLayer("linea")
+    map.removeSource("quartiere")
 
-    $(".tracce").fadeOut()
+    // $(".tracce").fadeOut()
 
 
-    $.getJSON('IPV.geojson', function(geojson) {
+    $.getJSON(orto + '.geojson', function(geojson) {
       var bbox = turf.extent(geojson);
       map.fitBounds(bbox, {
         padding: 400,
@@ -449,17 +680,17 @@ function removeInfo() {
   } else if (orto == "OVP") {
 
     $("#sidebar h1").html("Orti di Via Padova");
-    $("#sidebar p").html("In questa zona si accostano, così, mondi e storie diverse, immagini e prospettive di nuove forme urbane mescolate a un passato più o meno recente. A Isola ci sono, velate dalla polvere di nuovi e vecchi cantieri, sovrapposizioni di ricordi che, per chi si affaccia per la prima volta alle geometrie del quartiere, possono risultare caotiche e disordinate. In realtà, per comprendere i vari strati, è solo richiesta una maggiore lentezza, un diverso sguardo, una calma non consona a Milano, città del rigore e degli spostamenti rapidi. ");
-    $("#sidebar h3").html("COESIONE SOCIALE");
+    $("#sidebar p").html("COESIONE SOCIALE<br><br>In questa zona si accostano, così, mondi e storie diverse, immagini e prospettive di nuove forme urbane mescolate a un passato più o meno recente. A Isola ci sono, velate dalla polvere di nuovi e vecchi cantieri, sovrapposizioni di ricordi che, per chi si affaccia per la prima volta alle geometrie del quartiere, possono risultare caotiche e disordinate. In realtà, per comprendere i vari strati, è solo richiesta una maggiore lentezza, un diverso sguardo, una calma non consona a Milano, città del rigore e degli spostamenti rapidi. ");
+    $("#sidebar h3").html("21 MAGGIO - 10 LUGLIO");
 
-    map.removeLayer("areaIsola")
-    map.removeLayer("lineaIsola")
-    map.removeSource("isola")
+    map.removeLayer("area")
+    map.removeLayer("linea")
+    map.removeSource("quartiere")
 
-    $(".tracce").fadeOut()
+    // $(".tracce").fadeOut()
 
 
-    $.getJSON('OVP.geojson', function(geojson) {
+    $.getJSON(orto + '.geojson', function(geojson) {
       var bbox = turf.extent(geojson);
       map.fitBounds(bbox, {
         padding: 400,
@@ -470,6 +701,78 @@ function removeInfo() {
         essential: true
       });
     })
+  } else if (orto == "GDA") {
+
+    $("#sidebar h1").html("Giardino degli Aromi");
+    $("#sidebar p").html("TRASFORMAZIONE CURATIVA<br><br>Il Giardino degli Aromi è portavoce e testimonianza della riconversione di uno spazio. Quando esisteva ancora l’ospedale psichiatrico Paolo Pini, le aree verdi venivano utilizzate per dare conforto e terapia agli internati e costituivano uno spazio totalmente chiuso rispetto al quartiere; ad oggi i giardini e la loro trasformazione curativa hanno ancora un significativo legame con ambienti sanitari, ma, privati dello stigma della malattia godono di un’apertura anche verso gli ambienti cittadini.");
+    $("#sidebar h3").html("14 GIUGNO - 3 LUGLIO");
+
+    map.removeLayer("area")
+    map.removeLayer("linea")
+    map.removeSource("quartiere")
+
+    // $(".tracce").fadeOut()
+
+
+    $.getJSON(orto + '.geojson', function(geojson) {
+      var bbox = turf.extent(geojson);
+      map.fitBounds(bbox, {
+        padding: 400,
+        bearing: 0,
+        speed: 0.8,
+        curve: 2,
+        easing: (t) => t,
+        essential: true
+      });
+    })
+  } else if (orto == "CGN") {
+    $("#sidebar h1").html("Cascina Cuccagna");
+    $("#sidebar h3").html("28 MAGGIO - 17 LUGLIO");
+    $("#sidebar p").html("LEGAME STORICO<br><br>Gli orti della Cascina Cuccagna sorgono una decina di anni fa in un’area iscritta al catasto fin dal 1690. Si tratta di un vero proprio movimento proveniente dal basso: per tornare alle origini rurali, i cittadini si mobilitano per realizzare un piccolo spazio verde coltivato in cui il legame storico con il quartiere continua ad essere vivo.");
+
+    map.removeLayer("area")
+    map.removeLayer("linea")
+    map.removeSource("quartiere")
+
+    // $(".tracce").fadeOut()
+
+
+    $.getJSON(orto + '.geojson', function(geojson) {
+      var bbox = turf.extent(geojson);
+      map.fitBounds(bbox, {
+        padding: 400,
+        bearing: 0,
+        speed: 0.8,
+        curve: 2,
+        easing: (t) => t,
+        essential: true
+      });
+    })
+
+  } else if (orto == "GDS") {
+    $("#sidebar h1").html("Giardini del Sole");
+    $("#sidebar h3").html("4 GIUGNO - 24 LUGLIO");
+    $("#sidebar p").html("EDUCAZIONE ATTIVA<br><br>I Giardini del Sole sono collocati all’interno del parco Trotter, area vasta e salubre nata all’inizio del ‘900 dove i bambini di salute gracile potevano godere dei benefici del contatto diretto con l’ambiente naturale, oltre ad apprendere le nozioni botaniche. Questi orti si trovano in prossimità di istituzioni scolastiche, il che rende la loro forma di resilienza dell’educazione attiva ancora più forte dal momento che si è perpetuata fino ai giorni nostri.");
+
+    map.removeLayer("area")
+    map.removeLayer("linea")
+    map.removeSource("quartiere")
+
+    // $(".tracce").fadeOut()
+
+
+    $.getJSON(orto + '.geojson', function(geojson) {
+      var bbox = turf.extent(geojson);
+      map.fitBounds(bbox, {
+        padding: 400,
+        bearing: 0,
+        speed: 0.8,
+        curve: 2,
+        easing: (t) => t,
+        essential: true
+      });
+    })
+
   }
 
   $("#sidebar #render").css("display", "block")
@@ -478,6 +781,14 @@ function removeInfo() {
 
   tracce = false
 }
+
+
+
+
+
+
+
+
 
 function addInfo() {
   $("#sidebar #render").css("display", "none")
@@ -523,15 +834,15 @@ function addInfo() {
 
     });
 
-    map.addSource('isola', {
+    map.addSource('quartiere', {
       type: 'geojson',
       data: "isola.geojson"
     });
 
     map.addLayer({
-      'id': 'areaIsola',
+      'id': 'area',
       'type': 'fill',
-      'source': 'isola',
+      'source': 'quartiere',
       'layout': {},
       'paint': {
         'fill-color': '#236b6c',
@@ -539,9 +850,9 @@ function addInfo() {
       }
     });
     map.addLayer({
-      'id': 'lineaIsola',
+      'id': 'linea',
       'type': 'line',
-      'source': 'isola',
+      'source': 'quartiere',
       'layout': {},
       'paint': {
         'line-color': '#172424',
@@ -568,7 +879,6 @@ function addInfo() {
         },
         mouseleave: function() {
           resetIsola()
-
         }
       });
 
@@ -662,10 +972,10 @@ function addInfo() {
   } else if (orto == "OVP") {
 
     $("#sidebar h1").html("Le tracce di Rottole");
-    $("#sidebar p").html("Le tracce sono ........ <br> <br> <br> Scopri le singole tracce andandoci sopra con il mouse");
+    $("#sidebar p").html("La storia degli Orti di via Padova non riguarda solo il giardino condiviso: elementi esterni all’orto si fanno portatori della memoria e delle trasformazioni che ha subito il quartiere, testimoniando come un microcosmo come questo possa dare un nuovo volto alla città.");
 
 
-    $.getJSON('tracceIsola.geojson', function(geojson) {
+    $.getJSON('tracceRottole.geojson', function(geojson) {
       for (const feature of geojson.features) {
         const el = document.createElement('div');
         el.className = 'tracce';
@@ -676,15 +986,15 @@ function addInfo() {
 
     });
 
-    map.addSource('isola', {
+    map.addSource('quartiere', {
       type: 'geojson',
       data: "rottole.geojson"
     });
 
     map.addLayer({
-      'id': 'areaIsola',
+      'id': 'area',
       'type': 'fill',
-      'source': 'isola',
+      'source': 'quartiere',
       'layout': {},
       'paint': {
         'fill-color': '#236b6c',
@@ -692,9 +1002,9 @@ function addInfo() {
       }
     });
     map.addLayer({
-      'id': 'lineaIsola',
+      'id': 'linea',
       'type': 'line',
-      'source': 'isola',
+      'source': 'quartiere',
       'layout': {},
       'paint': {
         'line-color': '#172424',
@@ -709,21 +1019,474 @@ function addInfo() {
 
     setTimeout(function() {
 
-      $("#artigiani").on({
+      $("#sassi").on({
         mouseenter: function() {
-          $("#sidebar img").css("display", "block")
-          $("#sidebar h1").html("Stecca degli Artigiani");
-          $("#sidebar p").html("Lorem ");
-          $("#sidebar img").attr("src", "steccaA.png")
+          $("#sidebar h1").html("SASSI DEL FIUME");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("I");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
         },
         mouseleave: function() {
-          $("#sidebar h1").html("Le tracce di Isola");
-          $("#sidebar p").html("Le tracce sono ........ <br> <br> <br> Scopri le singole tracce andandoci sopra con il mouse");
-          $("#sidebar img").css("display", "none")
+          resetRottole()
         }
       });
 
-    }, 100);
+      $("#lampione").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("LAMPIONE/MURALES");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("II");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetRottole()
+        }
+      });
+
+      $("#atm").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("SEDE DEPOSITO ATM");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("III");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetRottole()
+        }
+      });
+
+      $("#cassoni").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("CASSONI DI TERRA");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("IV");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetRottole()
+        }
+      });
+
+      $("#piante").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("PIANTE GIÀ ESISTENTI");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("V");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetRottole()
+        }
+      });
+
+    }, 500);
+
+    function resetRottole() {
+      $("#sidebar h1").html("Le tracce di Rottole");
+      $("#sidebar p").html("La storia degli Orti di via Padova non riguarda solo il giardino condiviso: elementi esterni all’orto si fanno portatori della memoria e delle trasformazioni che ha subito il quartiere, testimoniando come un microcosmo come questo possa dare un nuovo volto alla città.");
+      $("#sidebar #imgT").attr("src", "")
+      $("#sidebar #imgT").css("display", "none")
+      $("#details").css("display", "block")
+      $("#sidebar h2").css("display", "none");
+
+    }
+
+  } else if (orto == "CGN") {
+
+    $("#sidebar h1").html("Le tracce di Porta Romana");
+    $("#sidebar p").html("La storia degli orti della Cascina Cuccagna ha lasciato tracce nell’area che oggi è occupata da questa oasi urbana: nonostante si tratti di una piccola realtà, questi orti diventano portatori del trascorso della Cascina e della volontà dei cittadini che hanno voluto celebrarne le origini.");
+
+
+    $.getJSON('tracceCuccagna.geojson', function(geojson) {
+      for (const feature of geojson.features) {
+        const el = document.createElement('div');
+        el.className = 'tracce';
+        el.id = feature.properties.title;
+
+        nuoviMarker = new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
+      }
+
+    });
+
+    map.addSource('quartiere', {
+      type: 'geojson',
+      data: "pRomana.geojson"
+    });
+
+    map.addLayer({
+      'id': 'area',
+      'type': 'fill',
+      'source': 'quartiere',
+      'layout': {},
+      'paint': {
+        'fill-color': '#236b6c',
+        'fill-opacity': 0.2
+      }
+    });
+    map.addLayer({
+      'id': 'linea',
+      'type': 'line',
+      'source': 'quartiere',
+      'layout': {},
+      'paint': {
+        'line-color': '#172424',
+        'line-width': 1
+      }
+    });
+
+    map.flyTo({
+      center: [9.209332466125488, 45.45309031426514],
+      zoom: 16.3
+    });
+
+    setTimeout(function() {
+
+      $("#mura").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("MURA E CASCINA");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("I");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetRomana()
+        }
+      });
+
+      $("#guerra").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("ORTI DI GUERRA IN TEMPO DI PACE");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("II");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetRomana()
+        }
+      });
+
+      $("#piante").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("PIANTE DEL MONDO");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("III");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetRomana()
+        }
+      });
+
+      $("#fico").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("FICO");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("IV");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetRomana()
+        }
+      });
+
+
+    }, 500);
+
+    function resetRomana() {
+      $("#sidebar h1").html("Le tracce di Porta Romana");
+      $("#sidebar p").html("La storia degli orti della Cascina Cuccagna ha lasciato tracce nell’area che oggi è occupata da questa oasi urbana: nonostante si tratti di una piccola realtà, questi orti diventano portatori del trascorso della Cascina e della volontà dei cittadini che hanno voluto celebrarne le origini.");
+      $("#sidebar #imgT").attr("src", "")
+      $("#sidebar #imgT").css("display", "none")
+      $("#details").css("display", "block")
+      $("#sidebar h2").css("display", "none");
+
+    }
+
+  } else if (orto == "GDA") {
+
+    $("#sidebar h1").html("Le tracce di Comasina");
+    $("#sidebar p").html("Oltre a tracce limitrofe agli spazi adibiti ad orto condiviso, è possibile percepire la presenza di ulteriori testimonianze in tutto lo spazio circostante. L’ospedale psichiatrico Paolo Pini ha avuto una forte influenza sul luogo dove oggi sorge il Giardino degli Aromi: ancora oggi, se si guarda attentamente, si possono intravedere molteplici segni lasciati da ciò che era il luogo in precedenza.");
+
+
+    $.getJSON('tracceComasina.geojson', function(geojson) {
+      for (const feature of geojson.features) {
+        const el = document.createElement('div');
+        el.className = 'tracce';
+        el.id = feature.properties.title;
+
+        nuoviMarker = new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
+      }
+
+    });
+
+    map.addSource('quartiere', {
+      type: 'geojson',
+      data: "comasina.geojson"
+    });
+
+    map.addLayer({
+      'id': 'area',
+      'type': 'fill',
+      'source': 'quartiere',
+      'layout': {},
+      'paint': {
+        'fill-color': '#236b6c',
+        'fill-opacity': 0.2
+      }
+    });
+    map.addLayer({
+      'id': 'linea',
+      'type': 'line',
+      'source': 'quartiere',
+      'layout': {},
+      'paint': {
+        'line-color': '#172424',
+        'line-width': 1
+      }
+    });
+
+    map.flyTo({
+      center: [9.162565469741821, 45.52027805588598],
+      zoom: 16.2
+    });
+
+    setTimeout(function() {
+
+      $("#edifici").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("EDIFICI/WAYFINDING OSPEDALE PSICHIATRICO");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("I");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetComasina()
+        }
+      });
+
+      $("#mura").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("MURA");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("II");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetComasina()
+        }
+      });
+
+      $("#mandala").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("MANDALA");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("III");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetComasina()
+        }
+      });
+
+      $("#vento").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("GIARDINO DEL VENTO E DELLA LUCE");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("IV");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetComasina()
+        }
+      });
+
+    }, 500);
+
+    function resetComasina() {
+      $("#sidebar h1").html("Le tracce di Comasina");
+      $("#sidebar p").html("Oltre a tracce limitrofe agli spazi adibiti ad orto condiviso, è possibile percepire la presenza di ulteriori testimonianze in tutto lo spazio circostante. L’ospedale psichiatrico Paolo Pini ha avuto una forte influenza sul luogo dove oggi sorge il Giardino degli Aromi: ancora oggi, se si guarda attentamente, si possono intravedere molteplici segni lasciati da ciò che era il luogo in precedenza.");
+      $("#sidebar #imgT").attr("src", "")
+      $("#sidebar #imgT").css("display", "none")
+      $("#details").css("display", "block")
+      $("#sidebar h2").css("display", "none");
+
+    }
+
+  } else if (orto == "GDS") {
+
+    $("#sidebar h1").html("Le tracce di Turro");
+    $("#sidebar p").html("L’eco dei Giardini del Sole riecheggia in tutta l’area che circonda e racchiude gli orti: il Parco Trotter diventa, così, una parte fondamentale per la storia e per la narrazione dei giardini e un luogo che, grazie alle tracce ancora visibili, racchiude e conserva il loro passato.");
+
+
+    $.getJSON('tracceTurro.geojson', function(geojson) {
+      for (const feature of geojson.features) {
+        const el = document.createElement('div');
+        el.className = 'tracce';
+        el.id = feature.properties.title;
+
+        nuoviMarker = new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
+      }
+
+    });
+
+    map.addSource('quartiere', {
+      type: 'geojson',
+      data: "turro.geojson"
+    });
+
+    map.addLayer({
+      'id': 'area',
+      'type': 'fill',
+      'source': 'quartiere',
+      'layout': {},
+      'paint': {
+        'fill-color': '#236b6c',
+        'fill-opacity': 0.2
+      }
+    });
+    map.addLayer({
+      'id': 'linea',
+      'type': 'line',
+      'source': 'quartiere',
+      'layout': {},
+      'paint': {
+        'line-color': '#172424',
+        'line-width': 1
+      }
+    });
+
+    map.flyTo({
+      center: [9.221928119659424, 45.4979399275852],
+      zoom: 15
+    });
+
+    setTimeout(function() {
+
+      $("#vasche").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("EX VASCHE");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("I");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetTurro()
+        }
+      });
+
+      $("#solarium").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("SOLARIUM");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("II");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetTurro()
+        }
+      });
+
+      $("#rosa").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("ROSA DEI VENTI");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("III");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetTurro()
+        }
+      });
+
+      $("#ippodromo").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("IPPODROMO");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("IV");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetTurro()
+        }
+      });
+
+      $("#convitto").on({
+        mouseenter: function() {
+          $("#sidebar h1").html("EX-CONVITTO");
+          $("#sidebar h2").css("display", "block");
+          $("#sidebar h2").html("V");
+          $("#sidebar p").html("Presto più informazioni!");
+          $("#sidebar #imgT").css("display", "block")
+          $("#sidebar #imgT").attr("src", "soon.png")
+          $("#details").css("display", "none")
+        },
+        mouseleave: function() {
+          resetTurro()
+        }
+      });
+
+    }, 500);
+
+    function resetTurro() {
+      $("#sidebar h1").html("Le tracce di Turro");
+      $("#sidebar p").html("L’eco dei Giardini del Sole riecheggia in tutta l’area che circonda e racchiude gli orti: il Parco Trotter diventa, così, una parte fondamentale per la storia e per la narrazione dei giardini e un luogo che, grazie alle tracce ancora visibili, racchiude e conserva il loro passato.");
+      $("#sidebar #imgT").attr("src", "")
+      $("#sidebar #imgT").css("display", "none")
+      $("#details").css("display", "block")
+      $("#sidebar h2").css("display", "none");
+    }
+
   }
 
 }

@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+    "type": "Feature",
+    "properties": {
+      "title": "vasche"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.224699, 45.493633]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "solarium"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.223734, 45.492867]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "rosa"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.223904, 45.495496]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "ippodromo"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.225449, 45.493906]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "convitto"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.225933, 45.493924]
+    }
+  }
+]
+}

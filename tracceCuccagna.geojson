@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+    "type": "Feature",
+    "properties": {
+      "title": "mura"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.2115886, 45.4511928]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "guerra"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.212122, 45.451278]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "piante"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.212127, 45.45135]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "title": "fico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [9.212146, 45.451487]
+    }
+  }
+]
+}
