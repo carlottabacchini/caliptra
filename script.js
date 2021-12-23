@@ -510,10 +510,10 @@ map.once('idle', function() {
       $("#sidebar p").html("TRASFORMAZIONE CURATIVA<br><br>Il Giardino degli Aromi è portavoce e testimonianza della riconversione di uno spazio. Quando esisteva ancora l’ospedale psichiatrico Paolo Pini, le aree verdi venivano utilizzate per dare conforto e terapia agli internati e costituivano uno spazio totalmente chiuso rispetto al quartiere; ad oggi i giardini e la loro trasformazione curativa hanno ancora un significativo legame con ambienti sanitari, ma, privati dello stigma della malattia godono di un’apertura anche verso gli ambienti cittadini.");
 
       $("#sidebar #s1").attr("src", orto + "/1.png")
-      $("#sidebar #s2").attr("src", orto + "/1.png")
-      $("#sidebar #s3").attr("src", orto + "/1.png")
-      $("#sidebar #s4").attr("src", orto + "/1.png")
-      $("#sidebar #s5").attr("src", orto + "/1.png")
+      $("#sidebar #s2").attr("src", orto + "/2.png")
+      $("#sidebar #s3").attr("src", orto + "/3.png")
+      $("#sidebar #s4").attr("src", orto + "/4.png")
+      $("#sidebar #s5").attr("src", orto + "/5.png")
 
     }
 
