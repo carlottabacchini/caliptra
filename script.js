@@ -301,10 +301,10 @@ map.once('idle', function() {
       $("#sidebar p").html("COESIONE SOCIALE<br><br>Gli Orti di via Padova sorgono in una zona che, da una parte, è stata oscurata per molto tempo dalla fama turbolenta di via Padova, dall’altra, dal costante traffico di via Palmanova che taglia a metà il quartiere segnando un netto confine. Nel 2014 nasce l’orto con l’intento di ricucire le ferite del quartiere e dei rapporti tra i suoi cittadini, diventando un luogo di incontro e simbolo di coesione sociale.");
 
       $("#sidebar #s1").attr("src", orto + "/1.png")
-      $("#sidebar #s2").attr("src", orto + "/1.png")
-      $("#sidebar #s3").attr("src", orto + "/1.png")
-      $("#sidebar #s4").attr("src", orto + "/1.png")
-      $("#sidebar #s5").attr("src", orto + "/1.png")
+      $("#sidebar #s2").attr("src", orto + "/2.png")
+      $("#sidebar #s3").attr("src", orto + "/3.png")
+      $("#sidebar #s4").attr("src", orto + "/4.png")
+      $("#sidebar #s5").attr("src", orto + "/5.png")
 
     }
 
@@ -373,10 +373,10 @@ map.once('idle', function() {
       $("#sidebar p").html("EDUCAZIONE ATTIVA<br><br>I Giardini del Sole sono collocati all’interno del parco Trotter, area vasta e salubre nata all’inizio del ‘900 dove i bambini di salute gracile potevano godere dei benefici del contatto diretto con l’ambiente naturale, oltre ad apprendere le nozioni botaniche. Questi orti si trovano in prossimità di istituzioni scolastiche, il che rende la loro forma di resilienza dell’educazione attiva ancora più forte dal momento che si è perpetuata fino ai giorni nostri.");
 
       $("#sidebar #s1").attr("src", orto + "/1.png")
-      $("#sidebar #s2").attr("src", orto + "/1.png")
-      $("#sidebar #s3").attr("src", orto + "/1.png")
-      $("#sidebar #s4").attr("src", orto + "/1.png")
-      $("#sidebar #s5").attr("src", orto + "/1.png")
+      $("#sidebar #s2").attr("src", orto + "/2.png")
+      $("#sidebar #s3").attr("src", orto + "/3.png")
+      $("#sidebar #s4").attr("src", orto + "/4.png")
+      $("#sidebar #s5").attr("src", orto + "/5.png")
 
     }
 
