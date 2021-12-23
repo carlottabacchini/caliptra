@@ -441,10 +441,10 @@ map.once('idle', function() {
       $("#sidebar p").html("LEGAME STORICO<br><br>Gli orti della Cascina Cuccagna sorgono una decina di anni fa in un’area iscritta al catasto fin dal 1690. Si tratta di un vero proprio movimento proveniente dal basso: per tornare alle origini rurali, i cittadini si mobilitano per realizzare un piccolo spazio verde coltivato in cui il legame storico con il quartiere continua ad essere vivo.");
 
       $("#sidebar #s1").attr("src", orto + "/1.png")
-      $("#sidebar #s2").attr("src", orto + "/1.png")
-      $("#sidebar #s3").attr("src", orto + "/1.png")
-      $("#sidebar #s4").attr("src", orto + "/1.png")
-      $("#sidebar #s5").attr("src", orto + "/1.png")
+      $("#sidebar #s2").attr("src", orto + "/2.png")
+      $("#sidebar #s3").attr("src", orto + "/3.png")
+      $("#sidebar #s4").attr("src", orto + "/4.png")
+      $("#sidebar #s5").attr("src", orto + "/5.png")
 
     }
 
