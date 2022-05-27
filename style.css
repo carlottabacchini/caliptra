@@ -974,7 +974,8 @@ main p {
 
     100% {
       left: calc(90% - 60px);
-      top: calc(50vh - 67px);
+      bottom: 50vh;
+        top: unset;
       color: white;
       background: #172424;
     }
@@ -983,7 +984,8 @@ main p {
   @keyframes closeLong {
     0% {
       left: calc(90% - 60px);
-      top: calc(50vh - 66px);
+      bottom: 50vh;
+      top: unset;
       color: white;
       background: #172424;
     }
